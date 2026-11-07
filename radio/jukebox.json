@@ -1,0 +1,85 @@
+{
+  "name": "Jazmin's JukeBox",
+  "preset_file": "/etc/jukebox/radio_presets.json",
+  "mopidy_url": "http://127.0.0.1:6680/mopidy/rpc",
+  "splash_seconds": 3.0,
+  "gif_path": "/opt/jukebox/assets/JJukebox.gif",
+  "music_dir": "/mnt/screen-sd",
+  "dim_after_seconds": 60,
+  "display": {
+    "rotation": 90,
+    "pins": {
+      "dc": 17,
+      "rst": 4,
+      "bl": 12
+    },
+    "spi": {
+      "bus": 0,
+      "device": 0,
+      "speed_hz": 40000000
+    }
+  },
+  "touch": {
+    "swap_xy": true,
+    "flip_x": false,
+    "flip_y": false
+  },
+  "colors": {
+    "bg": [
+      6,
+      6,
+      6
+    ],
+    "orange": [
+      255,
+      149,
+      40
+    ],
+    "amber": [
+      255,
+      190,
+      60
+    ],
+    "amber_dark": [
+      110,
+      72,
+      22
+    ],
+    "green": [
+      0,
+      220,
+      100
+    ],
+    "green_dim": [
+      0,
+      130,
+      70
+    ],
+    "red": [
+      255,
+      80,
+      60
+    ],
+    "cyan": [
+      60,
+      220,
+      200
+    ],
+    "blue": [
+      70,
+      150,
+      255
+    ],
+    "white": [
+      240,
+      240,
+      235
+    ],
+    "grey": [
+      150,
+      150,
+      150
+    ]
+  },
+  "render_scale": 2
+}

@@ -1,0 +1,41 @@
+// Jazmin's JukeBox: SD card slot on the 2-inch LCD module.
+//
+// The Pi Hut / Waveshare 2" display has a TF (microSD) slot wired to the
+// SPI bus with its own chip select (SD_CS -> GPIO 7 / SPI0 CE1).
+// This overlay binds the kernel's mmc-spi-slot driver to that chip select
+// so the card appears as a block device and can be mounted at /mnt/screen-sd.
+//
+// Install (handled by install.sh):
+//   sudo dtc -@ -I dts -O dtb -o /boot/firmware/overlays/jazmin-sd.dtbo overlays/jazmin-sd.dts
+//   and add to /boot/firmware/config.txt:  dtoverlay=jazmin-sd
+//
+// The LCD keeps spidev0.0 (CE0). spidev0.1 (CE1) is disabled here so the
+// SD card can own that chip select.
+
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2835";
+
+    fragment@0 {
+        target-path = "/soc/spi@7e204000";
+        __overlay__ {
+            /* the screen's SD card on CS1 */
+            sdcard@1 {
+                compatible = "mmc-spi-slot";
+                reg = <1>;
+                spi-max-frequency = <8000000>;
+                voltage-ranges = <3000 3600>;
+                status = "okay";
+            };
+        };
+    };
+
+    fragment@1 {
+        target-path = "/soc/spi@7e204000/spidev@1";
+        __overlay__ {
+            status = "disabled";
+        };
+    };
+};

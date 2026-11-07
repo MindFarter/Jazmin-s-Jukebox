@@ -1,0 +1,12 @@
+{
+  "stations": [
+    { "label": "A1", "name": "SomaFM Groove Salad",  "genre": "ambient / downtempo", "uri": "https://ice2.somafm.com/groovesalad-128-mp3" },
+    { "label": "A2", "name": "SomaFM Fluid",          "genre": "indie pop / rock",   "uri": "https://ice2.somafm.com/fluid-128-mp3" },
+    { "label": "A3", "name": "SomaFM Dub Step Beyond","genre": "dubstep / bass",     "uri": "https://ice2.somafm.com/dubstep-128-mp3" },
+    { "label": "A4", "name": "Rock Antenne",           "genre": "rock",              "uri": "https://s1-webradio.rockantenne.de/rockantenne/stream/mp3" },
+    { "label": "A5", "name": "Rock Antenne Heavy Metal", "genre": "heavy metal",     "uri": "https://s1-webradio.rockantenne.de/heavy-metal/stream/mp3" },
+    { "label": "A6", "name": "Radio Paradise",         "genre": "eclectic mix",      "uri": "http://stream.radioparadise.com/mp3-128" },
+    { "label": "A7", "name": "KEXP Seattle",           "genre": "indie / alternative", "uri": "https://kexp-mp3-128.streamguys1.com/kexp128.mp3" },
+    { "label": "A8", "name": "SomaFM Drone Zone",      "genre": "ambient space",     "uri": "https://ice2.somafm.com/dronezone-128-mp3" }
+  ]
+}

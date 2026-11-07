@@ -1,0 +1,17 @@
+[Unit]
+Description=Jazmin's JukeBox touchscreen UI
+After=mopidy.service network-online.target
+Wants=mopidy.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/usr/bin/python3 /opt/jukebox/jukebox.py
+WorkingDirectory=/opt/jukebox
+Restart=always
+RestartSec=3
+Environment=JUKEBOX_CONFIG=/etc/jukebox/jukebox.json
+
+[Install]
+WantedBy=multi-user.target
